@@ -1,7 +1,8 @@
 Front-end Styleguide
 =================
 
-Esse é um styleguide para boas práticas de front-end. Contribua.
+Esse é um styleguide para boas práticas de front-end.
+Por favor, contribua.
 
 ## Geral
 
