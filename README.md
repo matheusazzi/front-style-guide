@@ -2,7 +2,7 @@ Front-end Styleguide
 =================
 
 Esse é um styleguide para boas práticas de front-end.
-Por favor, contribua.
+Por favor, Contribua.
 
 ## Geral
 
@@ -14,19 +14,19 @@ Omitindo o protocolo torna a "URL relativa", evita problemas de conteúdo misto 
 
 Não Recomendado:
 
-<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+	<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
 
-.example {
-	background: url('http://www.google.com/images/example');
-}
+	.example {
+		background: url('http://www.google.com/images/example');
+	}
 
 Recomendado:
 
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+	<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 
-.example {
-	background: url('//www.google.com/images/example');
-}
+	.example {
+		background: url('//www.google.com/images/example');
+	}
 
 ## Formatação geral
 
@@ -34,16 +34,16 @@ Recomendado:
 
 Indente o código com 4 espaços.
 
-Use espaços para indentação, apenas 4 espaços.
+Use espaços para indentação, apenas 4 tab.
 
-<ul>
-	<li>Fantastic</li>
-	<li>Great</li>
-</ul>
+	<ul>
+		<li>Fantastic</li>
+		<li>Great</li>
+	</ul>
 
-.example {
-	color: blue;
-}
+	.example {
+		color: blue;
+	}
 
 ### Font case
 
@@ -53,19 +53,19 @@ Todo o código deve estar em letras minúsculas: Isso se aplica a nomes de eleme
 
 Não recomendado:
 
-<A HREF="/">Home</A>
+	<A HREF="/">Home</A>
 
-.example {
-	color: #E5E5E5;
-}
+	.example {
+		color: #E5E5E5;
+	}
 
 Recomendado:
 
-<img src="google.png" alt="Google">
+	<img src="google.png" alt="Google">
 
-.example {
-	color: #e5e5e5;
-}
+	.example {
+		color: #e5e5e5;
+	}
 
 ### Sem whitespace
 
@@ -73,11 +73,11 @@ Remove os espaços em branco.
 
 Não recomendado:
 
-<p>Lorem ipsum.   </p>
+	<p>Lorem ipsum.   </p>
 
 Recomendado:
 
-<p>Lorem ipsum.</p>
+	<p>Lorem ipsum.</p>
 
 ## Codificação
 
@@ -105,25 +105,25 @@ Use ferramentas como o W3C HTML validator para teste.
 
 Não recomendado:
 
-<span>
-	<ul>
-		<a href="#">Lorem ipsum</a>
-		<br>
-		<a href="#">Lorem ipsum</a>
-	</ul>
-</span>
+	<span>
+		<ul>
+			<a href="#">Lorem ipsum</a>
+			<br>
+			<a href="#">Lorem ipsum</a>
+		</ul>
+	</span>
 
 Recomendado:
 
-<div>
-	<ul>
-		<li>Lorem ipsum</li>
-		<li>Lorem ipsum</li>
-		<li>Lorem ipsum</li>
-	</ul>
+	<div>
+		<ul>
+			<li>Lorem ipsum</li>
+			<li>Lorem ipsum</li>
+			<li>Lorem ipsum</li>
+		</ul>
 
-	<p>Lorem ipsum sit amet</p>
-</div>
+		<p>Lorem ipsum sit amet</p>
+	</div>
 
 ### Semântica
 
@@ -135,11 +135,11 @@ Usar HTML de acordo com seu propósito é importante para acessibilidade, reuso,
 
 Não recomendado:
 
-<div onclick="goToContact();">Contato</div>
+	<div onclick="goToContact();">Contato</div>
 
 Recomendado:
 
-<a href="contato" title="Contato">Contato</a>
+	<a href="contato" title="Contato">Contato</a>
 
 ### Multimídia Fallback
 
@@ -149,11 +149,11 @@ Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza d
 
 Não recomendado:
 
-<img src="logotipo.png">
+	<img src="logotipo.png">
 
 Recomendado:
 
-<img src="logotipo.png" alt="Empresa FooBar">
+	<img src="logotipo.png" alt="Empresa FooBar">
 
 ### Separation of Concerns
 
@@ -169,45 +169,45 @@ Separating structure from presentation from behavior is important for maintenanc
 
 Não recomendado:
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>HTML sucks</title>
-	<style>
-	body {
-		background-color: #888;
-		color: #fff;
-	}
-	</style>
-	<script>
-	alert('HTML sucks!!!!!');
-	</script>
-</head>
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>HTML sucks</title>
+			<style>
+				body {
+					background-color: #888;
+					color: #fff;
+				}
+			</style>
+			<script>
+				alert('HTML sucks!!!!!');
+			</script>
+		</head>
 
-<body>
-	<h1 style="font-size: 20px;">HTML sucks</h1>
-	<p style="font-size: 10px; color: #333; margin: 0 15px 10px;">I've read about this on a few sites but now I'm sure</p>
-	<h2 padding-top: 40px; color: red;>HTML is stupid!!1</h2>
-	<center>I can't believe there's no way to control the styling of my website without doing everything all over again!</center>
-</body>
-</html>
+		<body>
+			<h1 style="font-size: 20px;">HTML sucks</h1>
+			<p style="font-size: 10px; color: #333; margin: 0 15px 10px;">I've read about this on a few sites but now I'm sure</p>
+			<h2 padding-top: 40px; color: red;>HTML is stupid!!1</h2>
+			<center>I can't believe there's no way to control the styling of my website without doing everything all over again!</center>
+		</body>
+	</html>
 
 Recomendado:
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>My first CSS-only redesign</title>
-	<link rel="stylesheet" href="css/main.css">
-</head>
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>My first CSS-only redesign</title>
+			<link rel="stylesheet" href="css/main.css">
+		</head>
 
-<body>
-	<h1>My first CSS-only redesign</h1>
-	<p>I've read about this on a few sites but today I'm actually doing it: separating concerns and avoiding anything in the HTML of my website that is presentational.</p>
-	<h2>It's awesome!</h2>
-	<script src="js/main.js"></script>
-</body>
-</html>
+		<body>
+			<h1>My first CSS-only redesign</h1>
+			<p>I've read about this on a few sites but today I'm actually doing it: separating concerns and avoiding anything in the HTML of my website that is presentational.</p>
+			<h2>It's awesome!</h2>
+			<script src="js/main.js"></script>
+		</body>
+	</html>
 
 ### Entity References
 
@@ -235,15 +235,15 @@ Specifying type attributes in these contexts is not necessary as HTML5 implies t
 
 Não recomendado:
 
-<link type="text/css" rel="stylesheet" href="//www.google.com/css/maia.css">
+	<link type="text/css" rel="stylesheet" href="//www.google.com/css/maia.css">
 
-<script type="text/javascript" src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+	<script type="text/javascript" src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 
 Recomendado:
 
-<link rel="stylesheet" href="//www.google.com/css/maia.css">
+	<link rel="stylesheet" href="//www.google.com/css/maia.css">
 
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+	<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 
 ## HTML Formatting Rules
 
@@ -257,32 +257,32 @@ Also, indent them if they are child elements of a block, list, or table element.
 
 (If you run into issues around whitespace between list items it's acceptable to put all li elements in one line. A linter is encouraged to throw a warning instead of an error.)
 
-<blockquote>
-	<p><em>Space</em>, the final frontier.</p>
-</blockquote>
+	<blockquote>
+	  	<p><em>Space</em>, the final frontier.</p>
+	</blockquote>
 
-<ul>
-	<li>Moe</li>
-	<li>Larry</li>
-	<li>Curly</li>
-</ul>
+	<ul>
+		<li>Moe</li>
+		<li>Larry</li>
+		<li>Curly</li>
+	</ul>
 
-<h1>HTML Rocks!</h1>
+	<h1>HTML Rocks!</h1>
 
-<table>
-	<thead>
-		<tr>
-			<th scope="col">Income</th>
-			<th scope="col">Taxes</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>$ 5.00</td>
-			<td>$ 4.50</td>
-		</tr>
-	</tbody>
-</table>
+	<table>
+	  	<thead>
+	    	<tr>
+				<th scope="col">Income</th>
+				<th scope="col">Taxes</th>
+	  		</tr>
+	  	</thead>
+	  	<tbody>
+	    	<tr>
+	      		<td>$ 5.00</td>
+	      		<td>$ 4.50</td>
+			</tr>
+	  	</tbody>
+	</table>
 
 ### HTML Quotation Marks
 
@@ -294,11 +294,11 @@ Use ('') for javascript.
 
 Não recomendado:
 
-<a class='bt bt-primary'>Sign in</a>
+	<a class='bt bt-primary'>Sign in</a>
 
 Recomendado:
 
-<a class="bt bt-primary">Sign in</a>
+	<a class="bt bt-primary">Sign in</a>
 
 ## CSS Style Rules
 
@@ -326,21 +326,21 @@ Using functional or generic names reduces the probability of unnecessary documen
 
 Não recomendado:
 
-#navigation {} // Nomeclatura extensa.
-.bt-verde-maior {} // Classe usada apenas para um botão verde grande.
-.bt-green {} // Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html.
-#login-area {} // Nome composto sem necessidade.
-#left-bar {} // Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html.
-.images-lists {} // Somente imagens.
+	#navigation {} // Nomeclatura extensa.
+	.bt-verde-maior {} // Classe usada apenas para um botão verde grande.
+	.bt-green {} // Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html.
+	#login-area {} // Nome composto sem necessidade.
+	#left-bar {} // Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html.
+	.images-lists {} // Somente imagens.
 
 Recomendado:
 
-#nav {} // Nomeclatura simples, sem perder o sentido.
-.bt-secondary {} // Um botão diferente do botão padrão.
-.bt-big {} // Contém propriedades para aumentar o tamanho padrao de .bt
-#login {} // Area de login.
-#sidebar {} // Barra lateral.
-.galleries {} // Pode ser galeria de imagens, videos, audio.
+	#nav {} // Nomeclatura simples, sem perder o sentido.
+	.bt-secondary {} // Um botão diferente do botão padrão.
+	.bt-big {} // Contém propriedades para aumentar o tamanho padrao de .bt
+	#login {} // Area de login.
+	#sidebar {} // Barra lateral.
+	.galleries {} // Pode ser galeria de imagens, videos, audio.
 
 
 
