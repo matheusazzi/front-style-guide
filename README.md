@@ -346,14 +346,14 @@ Recomendado:
 
 
 
-# Referências:
+## Referências:
 
-[Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
-[idiomatic.css](https://github.com/necolas/idiomatic-css)
-[Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-[Github Style Guide](https://github.com/styleguide)
-[Douglas Crockford's Code Conventions for JavaScript](http://javascript.crockford.com/code.html)
-[idiomatic.js](https://github.com/rwldrn/idiomatic.js/)
-[Zeno Rocha Coding Style](https://github.com/zenorocha/my-coding-style)
-[jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js/)
-[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
+- [idiomatic.css](https://github.com/necolas/idiomatic-css)
+- [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+- [Github Style Guide](https://github.com/styleguide)
+- [Douglas Crockford's Code Conventions for JavaScript](http://javascript.crockford.com/code.html)
+- [idiomatic.js](https://github.com/rwldrn/idiomatic.js/)
+- [Zeno Rocha Coding Style](https://github.com/zenorocha/my-coding-style)
+- [jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js/)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
