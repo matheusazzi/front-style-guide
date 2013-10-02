@@ -34,7 +34,7 @@ Recomendado:
 
 Indente o código com 4 espaços.
 
-Use espaços para indentação, apenas 4 tab.
+Use espaços para indentação, apenas 4 espaços.
 
 	<ul>
 		<li>Fantastic</li>
