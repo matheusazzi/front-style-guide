@@ -103,8 +103,11 @@ Especificar a codificação em templates HTML e documentos via `<meta charset="u
 
 Use HTML5 sempre!
 
-A sintax HTML5 deve ser definida em todos os documentos HTML: `<!DOCTYPE html>`.
-
+A sintax HTML5 deve ser definida em todos os documentos HTML:
+```html
+<!DOCTYPE html>
+```
+### Elementos nulos
 Não feche elementos nulos, ou seja, use `<br>`, não `<br />`.
 
 ### Validação HTML
@@ -336,21 +339,21 @@ Using functional or generic names reduces the probability of unnecessary documen
 
 Não recomendado:
 ```css
-#navigation {} // Nomeclatura extensa.
-.bt-verde-maior {} // Classe usada apenas para um botão verde grande.
-.bt-green {} // Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html.
-#login-area {} // Nome composto sem necessidade.
-#left-bar {} // Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html.
-.images-lists {} // Somente imagens.
+#navigation {} /* Nomeclatura extensa. */
+.bt-verde-maior {} /* Classe usada apenas para um botão verde grande. */
+.bt-green {} /* Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html. */
+#login-area {} /* Nome composto sem necessidade. */
+#left-bar {} /* Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html. */
+.images-lists {} /* Somente imagens. */
 ```
 Recomendado:
 ```css
-#nav {} // Nomeclatura simples, sem perder o sentido.
-.bt-secondary {} // Um botão diferente do botão padrão.
-.bt-big {} // Contém propriedades para aumentar o tamanho padrao de .bt
-#login {} // Area de login.
-#sidebar {} // Barra lateral.
-.galleries {} // Pode ser galeria de imagens, videos, audio.
+#nav {} /* Nomeclatura simples, sem perder o sentido. */
+.bt-secondary {} /* Um botão diferente do botão padrão. */
+.bt-big {} /* Contém propriedades para aumentar o tamanho padrao de .bt */
+#login {} /* Area de login. */
+#sidebar {} /* Barra lateral. */
+.galleries {} /* Pode ser galeria de imagens, videos, audio. */
 ```
 
 
