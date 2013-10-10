@@ -79,16 +79,16 @@ Recomendado:
 
 ### Sem whitespace
 
-Remove os espaços em branco.
+Remova os espaços em branco.
 
 Não recomendado:
-
-	<p>Lorem ipsum.   </p>
-
+```html
+<p>Lorem ipsum.   </p>
+```
 Recomendado:
-
-	<p>Lorem ipsum.</p>
-
+```html
+<p>Lorem ipsum.</p>
+```
 ## Codificação
 
 Use UTF-8 (sem BOM).
@@ -114,27 +114,27 @@ Use HTML validado quando possível.
 Use ferramentas como o W3C HTML validator para teste.
 
 Não recomendado:
-
-	<span>
-		<ul>
-			<a href="#">Lorem ipsum</a>
-			<br>
-			<a href="#">Lorem ipsum</a>
-		</ul>
-	</span>
-
+```html
+<span>
+	<ul>
+		<a href="#">Lorem ipsum</a>
+		<br>
+		<a href="#">Lorem ipsum</a>
+	</ul>
+</span>
+```
 Recomendado:
+```html
+<div>
+	<ul>
+		<li>Lorem ipsum</li>
+		<li>Lorem ipsum</li>
+		<li>Lorem ipsum</li>
+	</ul>
 
-	<div>
-		<ul>
-			<li>Lorem ipsum</li>
-			<li>Lorem ipsum</li>
-			<li>Lorem ipsum</li>
-		</ul>
-
-		<p>Lorem ipsum sit amet</p>
-	</div>
-
+	<p>Lorem ipsum sit amet</p>
+</div>
+```
 ### Semântica
 
 Use HMTL de acordo com seu propósito.
@@ -144,13 +144,13 @@ Use os elementos ("tags") para o objetivo que eles foram criados. Por exemplo, u
 Usar HTML de acordo com seu propósito é importante para acessibilidade, reuso, e código eficiente.
 
 Não recomendado:
-
-	<div onclick="goToContact();">Contato</div>
-
+```html
+<div onclick="goToContact();">Contato</div>
+```
 Recomendado:
-
-	<a href="contato" title="Contato">Contato</a>
-
+```html
+<a href="contato" title="Contato">Contato</a>
+```
 ### Multimídia Fallback
 
 Forneça alternativas para conteúdos multimídia.
@@ -158,13 +158,13 @@ Forneça alternativas para conteúdos multimídia.
 Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza de oferecer alternativas de acesso. Para imagens use alt="" e para videos e audios use legendas ou texto, se disponíveis.
 
 Não recomendado:
-
-	<img src="logotipo.png">
-
+```html
+<img src="logotipo.png">
+```
 Recomendado:
-
-	<img src="logotipo.png" alt="Empresa FooBar">
-
+```html
+<img src="logotipo.png" alt="Empresa FooBar">
+```
 ### Separation of Concerns
 
 Separate structure from presentation from behavior.
@@ -178,46 +178,47 @@ In addition, keep the contact area as small as possible by linking as few style 
 Separating structure from presentation from behavior is important for maintenance reasons. It is always more expensive to change HTML documents and templates than it is to update style sheets and scripts.
 
 Não recomendado:
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML sucks</title>
+		<style>
+			body {
+				background-color: #888;
+				color: #fff;
+			}
+		</style>
+		<script>
+			alert('HTML sucks!!!!!');
+		</script>
+	</head>
 
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<title>HTML sucks</title>
-			<style>
-				body {
-					background-color: #888;
-					color: #fff;
-				}
-			</style>
-			<script>
-				alert('HTML sucks!!!!!');
-			</script>
-		</head>
-
-		<body>
-			<h1 style="font-size: 20px;">HTML sucks</h1>
-			<p style="font-size: 10px; color: #333; margin: 0 15px 10px;">I've read about this on a few sites but now I'm sure</p>
-			<h2 padding-top: 40px; color: red;>HTML is stupid!!1</h2>
-			<center>I can't believe there's no way to control the styling of my website without doing everything all over again!</center>
-		</body>
-	</html>
-
+	<body>
+		<h1 style="font-size: 20px;">HTML sucks</h1>
+		<p style="font-size: 10px; color: #333; margin: 0 15px 10px;">I've read about this on a few sites but now I'm sure</p>
+		<h2 padding-top: 40px; color: red;>HTML is stupid!!1</h2>
+		<center>I can't believe there's no way to control the styling of my website without doing everything all over again!</center>
+	</body>
+</html>
+```
 Recomendado:
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My first CSS-only redesign</title>
+		<link rel="stylesheet" href="css/main.css">
+	</head>
 
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<title>My first CSS-only redesign</title>
-			<link rel="stylesheet" href="css/main.css">
-		</head>
-
-		<body>
-			<h1>My first CSS-only redesign</h1>
-			<p>I've read about this on a few sites but today I'm actually doing it: separating concerns and avoiding anything in the HTML of my website that is presentational.</p>
-			<h2>It's awesome!</h2>
-			<script src="js/main.js"></script>
-		</body>
-	</html>
+	<body>
+		<h1>My first CSS-only redesign</h1>
+		<p>I've read about this on a few sites but today I'm actually doing it: separating concerns and avoiding anything in the HTML of my website that is presentational.</p>
+		<h2>It's awesome!</h2>
+		<script src="js/main.js"></script>
+	</body>
+</html>
+```
 
 ### Entity References
 
@@ -244,17 +245,15 @@ Do not use type attributes for style sheets (unless not using CSS) and scripts (
 Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
 
 Não recomendado:
-
-	<link type="text/css" rel="stylesheet" href="//www.google.com/css/maia.css">
-
-	<script type="text/javascript" src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
-
+```html
+<link type="text/css" rel="stylesheet" href="//www.google.com/css/maia.css">
+<script type="text/javascript" src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
 Recomendado:
-
-	<link rel="stylesheet" href="//www.google.com/css/maia.css">
-
-	<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
-
+```html
+<link rel="stylesheet" href="//www.google.com/css/maia.css">
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
 ## HTML Formatting Rules
 
 ### General Formatting
@@ -266,33 +265,34 @@ Independent of the styling of an element (as CSS allows elements to assume a dif
 Also, indent them if they are child elements of a block, list, or table element.
 
 (If you run into issues around whitespace between list items it's acceptable to put all li elements in one line. A linter is encouraged to throw a warning instead of an error.)
+```html
+<blockquote>
+  	<p><em>Space</em>, the final frontier.</p>
+</blockquote>
 
-	<blockquote>
-	  	<p><em>Space</em>, the final frontier.</p>
-	</blockquote>
+<ul>
+	<li>Moe</li>
+	<li>Larry</li>
+	<li>Curly</li>
+</ul>
 
-	<ul>
-		<li>Moe</li>
-		<li>Larry</li>
-		<li>Curly</li>
-	</ul>
+<h1>HTML Rocks!</h1>
 
-	<h1>HTML Rocks!</h1>
-
-	<table>
-	  	<thead>
-	    	<tr>
-				<th scope="col">Income</th>
-				<th scope="col">Taxes</th>
-	  		</tr>
-	  	</thead>
-	  	<tbody>
-	    	<tr>
-	      		<td>$ 5.00</td>
-	      		<td>$ 4.50</td>
-			</tr>
-	  	</tbody>
-	</table>
+<table>
+  	<thead>
+    	<tr>
+			<th scope="col">Income</th>
+			<th scope="col">Taxes</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+    	<tr>
+      		<td>$ 5.00</td>
+      		<td>$ 4.50</td>
+		</tr>
+  	</tbody>
+</table>
+```
 
 ### HTML Quotation Marks
 
@@ -303,13 +303,13 @@ Use double ("") rather than single quotation marks ('') around attribute values.
 Use ('') for javascript.
 
 Não recomendado:
-
-	<a class='bt bt-primary'>Sign in</a>
-
+```html
+<a class='bt bt-primary'>Login</a>
+```
 Recomendado:
-
-	<a class="bt bt-primary">Sign in</a>
-
+```html
+<a class="bt bt-primary">Login</a>
+```
 ## CSS Style Rules
 
 ### CSS Validity
@@ -335,23 +335,23 @@ Generic names are simply a fallback for elements that have no particular or no m
 Using functional or generic names reduces the probability of unnecessary document or template changes.
 
 Não recomendado:
-
-	#navigation {} // Nomeclatura extensa.
-	.bt-verde-maior {} // Classe usada apenas para um botão verde grande.
-	.bt-green {} // Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html.
-	#login-area {} // Nome composto sem necessidade.
-	#left-bar {} // Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html.
-	.images-lists {} // Somente imagens.
-
+```css
+#navigation {} // Nomeclatura extensa.
+.bt-verde-maior {} // Classe usada apenas para um botão verde grande.
+.bt-green {} // Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html.
+#login-area {} // Nome composto sem necessidade.
+#left-bar {} // Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html.
+.images-lists {} // Somente imagens.
+```
 Recomendado:
-
-	#nav {} // Nomeclatura simples, sem perder o sentido.
-	.bt-secondary {} // Um botão diferente do botão padrão.
-	.bt-big {} // Contém propriedades para aumentar o tamanho padrao de .bt
-	#login {} // Area de login.
-	#sidebar {} // Barra lateral.
-	.galleries {} // Pode ser galeria de imagens, videos, audio.
-
+```css
+#nav {} // Nomeclatura simples, sem perder o sentido.
+.bt-secondary {} // Um botão diferente do botão padrão.
+.bt-big {} // Contém propriedades para aumentar o tamanho padrao de .bt
+#login {} // Area de login.
+#sidebar {} // Barra lateral.
+.galleries {} // Pode ser galeria de imagens, videos, audio.
+```
 
 
 
