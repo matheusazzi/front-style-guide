@@ -13,20 +13,24 @@ Omitir o protocolo (http:, https:) das URLs das imagens e midias, style sheets, 
 Omitindo o protocolo torna a "URL relativa", evita problemas de conteúdo misto e resulta em menores tamanhos de arquivo.
 
 Não Recomendado:
-
-	<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
-
-	.example {
-		background: url('http://www.google.com/images/example');
-	}
+```html
+<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+```css
+.example {
+	background: url('http://www.google.com/images/example');
+}
+```
 
 Recomendado:
-
-	<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
-
-	.example {
-		background: url('//www.google.com/images/example');
-	}
+```html
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+```css
+.example {
+	background: url('//www.google.com/images/example');
+}
+```
 
 ## Formatação geral
 
@@ -35,15 +39,17 @@ Recomendado:
 Indente o código com 4 espaços.
 
 Use espaços para indentação, apenas 4 espaços.
-
-	<ul>
-		<li>Fantastic</li>
-		<li>Great</li>
-	</ul>
-
-	.example {
-		color: blue;
-	}
+```html
+<ul>
+	<li>Fantastic</li>
+	<li>Great</li>
+</ul>
+```
+```css
+.example {
+	color: blue;
+}
+```
 
 ### Font case
 
@@ -52,20 +58,24 @@ Sempre use minúsculo.
 Todo o código deve estar em letras minúsculas: Isso se aplica a nomes de elementos HTML, atributos, valores de atributos (exceto text/CDATA), seletores CSS, propriedades e valores de propriedade (com exceção de strings).
 
 Não recomendado:
-
-	<A HREF="/">Home</A>
-
-	.example {
-		color: #E5E5E5;
-	}
+```html
+<A HREF="/">Home</A>
+```
+```css
+.example {
+	color: #E5E5E5;
+}
+```
 
 Recomendado:
-
-	<img src="google.png" alt="Google">
-
-	.example {
-		color: #e5e5e5;
-	}
+```html
+<img src="google.png" alt="Google">
+```
+```css
+.example {
+	color: #e5e5e5;
+}
+```
 
 ### Sem whitespace
 
