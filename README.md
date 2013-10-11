@@ -353,7 +353,7 @@ Recomendado:
 .bt-big {} /* Contém propriedades para aumentar o tamanho padrao de .bt */
 #login {} /* Area de login. */
 #sidebar {} /* Barra lateral. */
-.galleries {} /* Pode ser galeria de imagens, videos, audio. */
+.gallery {} /* Pode ser galeria de imagens, videos, audio. */
 ```
 
 ### Desenvolvimento em progresso.
