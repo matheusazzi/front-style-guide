@@ -341,7 +341,7 @@ Não recomendado:
 ```css
 #navigation {} /* Nomeclatura extensa. */
 .bt-verde-maior {} /* Classe usada somente para um botão verde grande. */
-.bt-green {} /* Fixada a cor verde, se for necessário mudar a cor do layout precisará trocar a classe, alterando o html. */
+.bt-green {} /* Fixada a cor verde, se for necessário mudar a precisará trocar a classe, alterando o html. */
 #login-area {} /* Nome composto sem necessidade. */
 #left-bar {} /* Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html. */
 .images-lists {} /* Somente imagens. */
