@@ -95,7 +95,8 @@ Use UTF-8 (sem BOM).
 
 Verifique se o seu editor usa UTF-8 (sem BOM) como codificação de caracteres.
 
-Especifique a codificação em arquivos HTML via `<meta charset="utf-8">`. 
+Especifique a codificação em arquivos HTML via `<meta charset="utf-8">`.
+
 Não especifique a codificação de folhas de estilo.
 
 ## HTML Style Rules
@@ -175,11 +176,9 @@ Separe a estrutura da apresentação e do comportamento.
 
 Separe estritamente a estrutura (markup), apresentação/estilo (style sheet), e comportamento (scripts), mantendo eles cada um no seu arquivo mas com as suas interações.
 
-That is, make sure documents and templates contain only HTML and HTML that is solely serving structural purposes. Move everything presentational into style sheets, and everything behavioral into scripts.
+Separar a estrutura da apresentação e comportamento é muito importante por motivos de manutenção. 
 
-In addition, keep the contact area as small as possible by linking as few style sheets and scripts as possible from documents and templates.
-
-Separating structure from presentation from behavior is important for maintenance reasons. It is always more expensive to change HTML documents and templates than it is to update style sheets and scripts.
+É sempre mais custoso para alterar documentos que não estão bem estruturados.
 
 Não recomendado:
 ```html
@@ -199,10 +198,10 @@ Não recomendado:
 	</head>
 
 	<body>
-		<h1 style="font-size: 20px;">HTML sucks</h1>
-		<p style="font-size: 10px; color: #333; margin: 0 15px 10px;">I've read about this on a few sites but now I'm sure</p>
+		<h1 style="font-size: 20px;">HTML Sucks</h1>
+		<p style="font-size: 10px; color: #333; margin: 0 15px 10px;">Lorem ipsum dolor</p>
 		<h2 padding-top: 40px; color: red;>HTML is stupid!!1</h2>
-		<center>I can't believe there's no way to control the styling of my website without doing everything all over again!</center>
+		<center>Lorem ipsum dolor sit amet, consectetur adipisicing elit</center>
 	</body>
 </html>
 ```
@@ -217,7 +216,7 @@ Recomendado:
 
 	<body>
 		<h1>My first CSS-only redesign</h1>
-		<p>I've read about this on a few sites but today I'm actually doing it: separating concerns and avoiding anything in the HTML of my website that is presentational.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 		<h2>It's awesome!</h2>
 		<script src="js/main.js"></script>
 	</body>
@@ -226,27 +225,29 @@ Recomendado:
 
 ### Entity References
 
-Do not use entity references.
+Não use entity references.
 
-There is no need to use entity references like &mdash;, &rdquo;, or &#x263a;, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
+Não é necessário utilizar entity references como `&mdash;`, `&rdquo;`, ou `&#x263a;`, assumindo que você está utilizando codificação UTF-8.
 
-The only exceptions apply to characters with special meaning in HTML (like < and &) as well as control or "invisible" characters (like no-break spaces).
+As únicas exceções se aplicam a caracteres com significado especial em HTML (como `<` e `&`), bem como caracteres "invisíveis" (como `&nbsp;`).
 
 Não recomendado:
 
-The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+O simbolo atual para o Euro é `&ldquo;&eur;&rdquo;`.
 
 Recomendado:
 
-The currency symbol for the Euro is "".
+O simbolo atual para o Euro é `£`.
 
-### Type Attributes
+### Tipo de atributo
 
-Omit type attributes for style sheets and scripts.
+Omita o tipo `type=""` para as folhas de estilo e scripts.
 
-Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
+Não use o atributo type para folhas de estilo (a não ser que não usar CSS) e scripts (a não ser que não usar JavaScript).
 
-Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
+Não é necessário especificá-los, o HTML5 tem como padrão `text/css` para folhas de estilos e `text/javascript` para scripts.
+
+Isso pode ser feito com segurança, mesmo para navegadores mais antigos.
 
 Não recomendado:
 ```html
@@ -262,13 +263,11 @@ Recomendado:
 
 ### Formatação Geral
 
-Use a new line for every block, list, or table element, and indent every such child element.
+Use uma nova linha para cada elemento block, list ou table, e indente todos seus elementos filhos.
 
-Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.
+Independente do estilo de um elemento (o CSS permite que aos elementos assumir um papel diferente através da propriedade display), coloque cada elemento block, list ou table em uma nova linha.
 
-Also, indent them if they are child elements of a block, list, or table element.
-
-(If you run into issues around whitespace between list items it's acceptable to put all li elements in one line. A linter is encouraged to throw a warning instead of an error.)
+Também indente mesmo que sejam filhos de outro elemento block, list ou table.
 ```html
 <blockquote>
   	<p><em>Space</em>, the final frontier.</p>
@@ -300,11 +299,11 @@ Also, indent them if they are child elements of a block, list, or table element.
 
 ### HTML Quotation Marks
 
-When quoting attributes values, use double quotation marks.
+Sempre use aspas duplas no arquivo html.
 
-Use double ("") rather than single quotation marks ('') around attribute values.
+Use aspas duplas ("") ao invés de simples ('').
 
-Use ('') for javascript.
+Use ('') para JavaScript.
 
 Não recomendado:
 ```html
@@ -326,9 +325,9 @@ Use tools such as the W3C CSS validator to test.
 
 Using valid CSS is a measurable baseline quality attribute that allows to spot CSS code that may not have any effect and can be removed, and that ensures proper CSS usage.
 
-### ID and Class Naming
+### Nomeação de ID e Class
 
-Use meaningful or generic ID and class names.
+Use nomes significantes e genéricos para classes e IDs.
 
 Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
 
@@ -336,7 +335,7 @@ Names that are specific and reflect the purpose of the element should be preferr
 
 Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as "helpers."
 
-Using functional or generic names reduces the probability of unnecessary document or template changes.
+O uso de nomes funcionais e genéricos reduz a probabilidade de documentação desnecessária e mudanças na estrutura.
 
 Não recomendado:
 ```css
@@ -357,8 +356,7 @@ Recomendado:
 .galleries {} /* Pode ser galeria de imagens, videos, audio. */
 ```
 
-
-
+### Desenvolvimento em progresso.
 
 ## Referências:
 
