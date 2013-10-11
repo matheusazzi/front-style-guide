@@ -8,9 +8,9 @@ Por favor, Contribua.
 
 ### Protocolo
 
-Omitir o protocolo (http:, https:) das URLs das imagens e midias, style sheets, scripts que estão disponíveis em ambos protocolos.
+Omitir o protocolo (http:, https:) das URLs das imagens, midias, style sheets, scripts que estão disponíveis em ambos protocolos.
 
-Omitindo o protocolo torna a "URL relativa", evita problemas de conteúdo misto e resulta em menores tamanhos de arquivo.
+Omitir o protocolo torna a "URL relativa", evita problemas de conteúdo misto.
 
 Não Recomendado:
 ```html
@@ -95,7 +95,8 @@ Use UTF-8 (sem BOM).
 
 Verifique se o seu editor usa UTF-8 (sem BOM) como codificação de caracteres.
 
-Especificar a codificação em templates HTML e documentos via `<meta charset="utf-8">`. Não especificar a codificação de folhas de estilo.
+Especifique a codificação em arquivos HTML via `<meta charset="utf-8">`. 
+Não especifique a codificação de folhas de estilo.
 
 ## HTML Style Rules
 
@@ -103,7 +104,7 @@ Especificar a codificação em templates HTML e documentos via `<meta charset="u
 
 Use HTML5 sempre!
 
-A sintax HTML5 deve ser definida em todos os documentos HTML:
+A sintax HTML5 deve ser definida em todos os documentos HTML usando:
 ```html
 <!DOCTYPE html>
 ```
@@ -112,7 +113,7 @@ Não feche elementos nulos, ou seja, use `<br>`, não `<br />`.
 
 ### Validação HTML
 
-Use HTML validado quando possível.
+Use HTML validado sempre que possível.
 
 Use ferramentas como o W3C HTML validator para teste.
 
@@ -144,7 +145,7 @@ Use HMTL de acordo com seu propósito.
 
 Use os elementos ("tags") para o objetivo que eles foram criados. Por exemplo, use `h1`, `h2`, `h3`, `h4`, `h5`, `h6` para cabeçalhos ou itens importantes, `p` para parágrafos, `a` para âncoras, etc.
 
-Usar HTML de acordo com seu propósito é importante para acessibilidade, reuso, e código eficiente.
+Usar HTML de acordo com seu propósito é importante para semântica, acessibilidade, reúso, e código eficiente.
 
 Não recomendado:
 ```html
@@ -168,11 +169,11 @@ Recomendado:
 ```html
 <img src="logotipo.png" alt="Empresa FooBar">
 ```
-### Separation of Concerns
+### Separação de conceitos
 
-Separate structure from presentation from behavior.
+Separe a estrutura da apresentação e do comportamento.
 
-Strictly keep structure (markup), presentation (styling), and behavior (scripting) apart, and try to keep the interaction between the three to an absolute minimum.
+Separe estritamente a estrutura (markup), apresentação/estilo (style sheet), e comportamento (scripts), mantendo eles cada um no seu arquivo mas com as suas interações.
 
 That is, make sure documents and templates contain only HTML and HTML that is solely serving structural purposes. Move everything presentational into style sheets, and everything behavioral into scripts.
 
@@ -257,9 +258,9 @@ Recomendado:
 <link rel="stylesheet" href="//www.google.com/css/maia.css">
 <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 ```
-## HTML Formatting Rules
+## HTML Regras de Formatação
 
-### General Formatting
+### Formatação Geral
 
 Use a new line for every block, list, or table element, and indent every such child element.
 
@@ -340,8 +341,8 @@ Using functional or generic names reduces the probability of unnecessary documen
 Não recomendado:
 ```css
 #navigation {} /* Nomeclatura extensa. */
-.bt-verde-maior {} /* Classe usada apenas para um botão verde grande. */
-.bt-green {} /* Fixada a cor verde, se necessitasse mudar a cor do layout precisaria trocar a classe, alterando o html. */
+.bt-verde-maior {} /* Classe usada somente para um botão verde grande. */
+.bt-green {} /* Fixada a cor verde, se for necessário mudar a cor do layout precisará trocar a classe, alterando o html. */
 #login-area {} /* Nome composto sem necessidade. */
 #left-bar {} /* Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html. */
 .images-lists {} /* Somente imagens. */
