@@ -301,9 +301,9 @@ Também indente mesmo que sejam filhos de outro elemento block, list ou table.
 
 Sempre use aspas duplas no arquivo html.
 
-Use aspas duplas ("") ao invés de simples ('').
+Use aspas duplas (" ") ao invés de simples (' ').
 
-Use ('') para JavaScript.
+Use (' ') para JavaScript.
 
 Não recomendado:
 ```html
