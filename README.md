@@ -160,7 +160,7 @@ Recomendado:
 
 Forneça alternativas para conteúdos multimídia.
 
-Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza de oferecer alternativas de acesso. Para imagens use alt="" e para videos e audios use legendas ou texto, se disponíveis.
+Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza de oferecer alternativas de acesso. Para imagens use `alt=""` e para videos e audios use legendas ou texto, se disponíveis.
 
 Não recomendado:
 ```html
@@ -315,9 +315,9 @@ Recomendado:
 ```
 ## CSS Style Rules
 
-### CSS Validity
+### CSS Validado
 
-Use valid CSS where possible.
+Use CSS válidado sempre que possível.
 
 Unless dealing with CSS validator bugs or requiring proprietary syntax, use valid CSS code.
 
