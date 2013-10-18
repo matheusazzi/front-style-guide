@@ -10,7 +10,7 @@ Por favor, Contribua.
 
 Omitir o protocolo (http:, https:) das URLs das imagens, midias, style sheets, scripts que estão disponíveis em ambos protocolos.
 
-Omitir o protocolo torna a "URL relativa", evita problemas de conteúdo misto.
+Omitir o protocolo torna a "URL relativa", evitando problemas de conteúdo misto.
 
 Não Recomendado:
 ```html
@@ -32,7 +32,7 @@ Recomendado:
 }
 ```
 
-## Formatação geral
+## Formatação Geral
 
 ### Indentação
 
@@ -79,7 +79,7 @@ Recomendado:
 
 ### Sem whitespace
 
-Remova os espaços em branco.
+Remova os espaços em branco, eles são desnecessários e podem complicar o uso de ferramentas de diff.
 
 Não recomendado:
 ```html
@@ -89,7 +89,7 @@ Recomendado:
 ```html
 <p>Lorem ipsum.</p>
 ```
-## Codificação
+### Codificação
 
 Use UTF-8 (sem BOM).
 
@@ -98,6 +98,12 @@ Verifique se o seu editor usa UTF-8 (sem BOM) como codificação de caracteres.
 Especifique a codificação em arquivos HTML via `<meta charset="utf-8">`.
 
 Não especifique a codificação de folhas de estilo.
+
+### Comentários
+
+Comente o código quando achar necessário, seja cauteloso, o excesso também pode prejudicar.
+
+Isso dependerá da complexidade do projeto.
 
 ## HTML Style Rules
 
@@ -261,7 +267,7 @@ Recomendado:
 ```
 ## HTML Regras de Formatação
 
-### Formatação Geral
+### Formatação dos elementos
 
 Use uma nova linha para cada elemento block, list ou table, e indente todos seus elementos filhos.
 
@@ -354,6 +360,25 @@ Recomendado:
 #login {} /* Area de login. */
 #sidebar {} /* Barra lateral. */
 .gallery {} /* Pode ser galeria de imagens, videos, audio. */
+```
+
+### Tipo de Seletores
+
+Evite utilizar tipos de seletores em IDs e Classes.
+
+A menos que seja necessário, sempre deve evitar essa prática.
+
+Evitando seletores ancestrais desnecessários também ajudará na performance do seu site.
+
+Não recomendado:
+```css
+ul#example {}
+div.error {}
+```
+Recomendado:
+```css
+#example {}
+.error {}
 ```
 
 ### Desenvolvimento em progresso.
