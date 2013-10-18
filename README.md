@@ -372,12 +372,12 @@ Evitando seletores ancestrais desnecessários também ajudará na performance do
 
 Não recomendado:
 ```css
-ul#example {}
+ul#products {}
 div.error {}
 ```
 Recomendado:
 ```css
-#example {}
+#products {}
 .error {}
 ```
 
