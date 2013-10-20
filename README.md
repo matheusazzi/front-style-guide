@@ -115,7 +115,11 @@ A sintax HTML5 deve ser definida em todos os documentos HTML usando:
 ```html
 <!DOCTYPE html>
 ```
+
+Para uma melhor organização e suporte da sua aplicação, utilize.
+
 ### Elementos nulos
+
 Não feche elementos nulos, ou seja, use `<br>`, não `<br />`.
 
 ### Validação HTML
@@ -325,31 +329,23 @@ Recomendado:
 
 Use CSS válidado sempre que possível.
 
-Unless dealing with CSS validator bugs or requiring proprietary syntax, use valid CSS code.
-
-Use tools such as the W3C CSS validator to test.
-
-Using valid CSS is a measurable baseline quality attribute that allows to spot CSS code that may not have any effect and can be removed, and that ensures proper CSS usage.
-
 ### Nomeação de ID e Class
 
 Use nomes significantes e genéricos para classes e IDs.
 
-Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
-
-Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
-
-Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as "helpers."
+Em vez de nomes descritivos ou enigmáticos, sempre use nomes que refletem o propósito do elemento em questão, ou que são de maneira genérica.
 
 O uso de nomes funcionais e genéricos reduz a probabilidade de documentação desnecessária e mudanças na estrutura.
 
+Além disso, a prática de nomes genéricos é melhor, pois sendo muito específico toda vez que o layout precisar ser alterado você precisará mudar o nome do(a) ID/classe se for muito específico e não condizer com o novo layout.
+
 Não recomendado:
 ```css
-#navigation {} /* Nomeclatura extensa. */
+#navigation {} /* Nomeclatura extensa desnecessária. */
 .bt-verde-maior {} /* Classe usada somente para um botão verde grande. */
-.bt-green {} /* Fixada a cor verde, se for necessário mudar a precisará trocar a classe, alterando o html. */
+.bt-green {} /* Fixada a cor verde, caso precisar mudar a cor, precisará trocar a classe, alterando o html. */
 #login-area {} /* Nome composto sem necessidade. */
-#left-bar {} /* Fixado que é uma barra no lado esquerdo se fosse preciso mudar para o lado direito precisaria alterar o html. */
+#left-bar {} /* Fixado que é uma barra no lado esquerdo, se for preciso mudar para o lado direito precisará alterar o html. */
 .images-lists {} /* Somente imagens. */
 ```
 Recomendado:
@@ -373,12 +369,110 @@ Evitando seletores ancestrais desnecessários também ajudará na performance do
 Não recomendado:
 ```css
 ul#products {}
+h2.title-page {}
 div.error {}
 ```
 Recomendado:
 ```css
 #products {}
+.title-page {}
 .error {}
+```
+
+### Propriedades Shorthand
+
+Não recomendado:
+```css
+border-top-style: none;
+font-family: Arial, tahoma, sans-serif;
+font-size: 16px;
+line-height: 1.4;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+```
+Recomendado:
+```css
+border-top: 0;
+font: 16px/1.4 Arial, tahoma, sans-serif;
+padding: 0 1em 2em;
+```
+
+### Zero e Unidades
+
+Omita a especificação da unidade quando o valor for "0".
+
+Pois zero é zero em qualquer unidade, então é desnecessária essa informação.
+
+Não recomendado:
+```css
+margin: 0px;
+```
+Recomendado:
+```css
+padding: 0;
+border: 0;
+```
+
+### Zero à esquerda
+
+Omita o "0" na frente de valores entre -1 e 1, não é necessário.
+```css
+font-size: .8em;
+opacity: .5;
+```
+
+### Hexadecimais
+
+se 3 characteres hexadecimais quando possível.
+
+Para cores isso é permitido, 3 characteres hexadecimais é melhor para digitar e mais sucinto.
+
+Não recomendado:
+```css
+color: #eebbcc;
+background-color: #666666;
+```
+Recomendado:
+```css
+color: #ebc;
+background-color: #666;
+```
+
+### Separação de nomeclatura
+
+Separe as palavras em IDs e Classes com um "-".
+
+Não concatene palavras em um seletor.
+
+Ter um padrão definido ajuda para não haver nomes conflitando e em manutenções.
+
+Não recomendado:
+```css
+#videoid
+.bt_big
+.titlePage
+
+```
+Recomendado:
+```css
+#video-id
+.bt-big
+.title-page
+```
+
+### CSS Hacks
+
+Não utilize CSS Hacks!
+
+Essa é uma prática muito ruim e pode gerar algumas complicações.
+
+Utilize uma abordagem diferente com fallbacks, seja utilizando o [Modernizr](http://modernizr.com/) ou com a declaração de navegadores antigos no comentário do início da página.
+
+```css
+.no-csstransitions seletor { ... }
+.lt-ie9 seletor { ... }
 ```
 
 ### Desenvolvimento em progresso.
