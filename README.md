@@ -2,6 +2,9 @@ Front-end Styleguide
 =================
 
 Esse é um styleguide para boas práticas de front-end.
+
+O objetivo disso é ter documentado todas as boas práticas para um desenvolvimento consistente, legível e funcional. Para servir de consulta a desenvolvedores antigos e ajuda aos novos. <b>Aqui não encontra-se a verdade absoluta</b>, apenas um apurado de todo o conteúdo disponível e que foram considerados um bom modelo.
+
 Por favor, Contribua.
 
 ## Geral
@@ -484,7 +487,7 @@ Utilize uma abordagem diferente com fallbacks, seja utilizando o [Modernizr](htt
 
 ### Desenvolvimento em progresso.
 
-## Referências:
+## Referências e Créditos:
 
 - [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [idiomatic.css](https://github.com/necolas/idiomatic-css)
