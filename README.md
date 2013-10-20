@@ -116,7 +116,15 @@ A sintax HTML5 deve ser definida em todos os documentos HTML usando:
 <!DOCTYPE html>
 ```
 
-Para uma melhor organização e suporte da sua aplicação, utilize.
+Para uma melhor organização e suporte da sua aplicação, utilize a notação abaixo, com ela você fornecerá fallback a navegadores antigos mais facilmente.
+
+```html
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="pt-BR" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="pt-BR" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="pt-BR" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="pt-BR" class="no-js"> <!--<![endif]-->
+```
 
 ### Elementos nulos
 
@@ -453,7 +461,6 @@ Não recomendado:
 #videoid
 .bt_big
 .titlePage
-
 ```
 Recomendado:
 ```css
