@@ -5,6 +5,8 @@ Esse é um styleguide para boas práticas de front-end.
 
 O objetivo disso é ter documentado todas as boas práticas para um desenvolvimento consistente, legível e funcional. Para servir de consulta a desenvolvedores antigos e ajuda aos novos. <b>Aqui não encontra-se a verdade absoluta</b>, apenas um apurado de todo o conteúdo disponível e que foram considerados um bom modelo.
 
+<b>O conteúdo foi retirado da web e pertence exclusivamente a seus criadores citados nos créditos.</b>
+
 Por favor, Contribua.
 
 ## Geral
@@ -39,9 +41,17 @@ Recomendado:
 
 ### Indentação
 
-Indente o código com 4 espaços.
+Apenas um estilo deve existir em todo o projeto. Seja sempre consistente na utilização de espaços em branco. Use espaços em branco para melhorar a legibilidade.
 
-Use espaços para indentação, apenas 4 espaços.
+Nunca misture espaços e tabs para indentação.
+
+Escolha entre indentação suave (espaços) ou tabulação. Atenha-se à sua escolha sem falhar. (Preferência: espaços)
+Se usar espaços, escolha o número de caracteres usados por nível de indentação. (Preferência: 4 espaços)
+
+<b>Dica:</b> configure seu editor para "mostrar invisíveis". Isso irá permitir que você elimine espaços em branco da quebra de linha, elimine espaços em branco de linhas vazias sem indentação e evite commits poluídos.
+
+<b>Dica:</b> use um [EditorConfig](http://editorconfig.org/) arquivo (ou equivalente) para ajudar a manter a convenção básica de espaços em branco que você aceitou para sua base de código.
+
 ```html
 <ul>
 	<li>Fantastic</li>
@@ -485,9 +495,104 @@ Utilize uma abordagem diferente com fallbacks, seja utilizando o [Modernizr](htt
 .lt-ie9 seletor { ... }
 ```
 
+## CSS Style Rules
+
+### Comentários
+
+Código bem comentado é extremamente importante. Tire tempo para descrever componentes, como eles funcionam, suas limitações, e o modo como são construídos. Não deixe outros no time adivinharem o propósito de códigos incomuns ou não óbvios.
+
+Estilo de comentário deve ser simples e consistente dentro de uma única base de código.
+
+- Coloque comentários em uma nova linha acima do seu assunto.
+- Evite comentários no fim da linha.
+- Mantenha o comprimento da linha a um máximo sensível, por exemplo, 80 colunas.
+- Faça o uso liberal de comentários para quebrar o código CSS em seções distintas.
+- Use comentários com iniciais maiúsculas e indentação de texto consistente.
+- Dica: configure seu editor para lhe prover com atalhos a geração do padrão de comentários acordado.
+
+```css
+/* ==========================================================================
+   Bloco de comentário de seção
+   ========================================================================== */
+
+/* Bloco de comentário de sub-seção
+   ========================================================================== */
+
+/*
+ * Bloco de comentário de grupo
+ * Ideal para explicações em múltiplas linhas e documentação.
+ */
+
+/**
+ * Breve descrição usando o estilo de formato de comentário Doxygen
+ *
+ * A primeira frase da descrição longa começa aqui e continua
+ * nesta linha por um tempo finalmente concluindo aqui no final deste parágrafo.
+ *
+ * A descrição longa é ideal para explicações mais detalhadas e documentação.
+ * Ele pode incluir HTML exemplo, URLs, ou qualquer outra informação
+ * que seja considerada necessária ou útil.
+ *
+ * @tag Esta é uma tag chamada 'tag'
+ *
+ * @todo Esta é uma declaração de tarefas que descreve uma tarefa atômica para ser 
+ * concluída numa data posterior. Ela envolve depois de 80 caracteres e as linhas a
+ * seguir são Recuado por dois espaços.
+ */
+
+/* Comentário básico */
+```
+
+### Formatação
+
+Para um CSS consistente é necessário ter sempre um espaçamento e indentação padronizada. Ajudando a tornar o código mais legível.
+
+O formato de código escolhido deve garantir que o código seja: fácil de ler; fácil de comentar claramente; minimize a chance de introduzir erros acidentalmente; e resulte em úteis visualizações de diferença.
+
+- Um seletor discreto por linha em um conjunto de regras com multi-seletores.
+- Um único espaço antes da abertura das chaves em um conjunto de regras.
+- Uma única declaração por linha em um bloco de declarativo.
+- Um nível de indentação para cada declaração.
+- Um único espaço depois dos dois pontos de uma declaração.
+- Use valores minúsculos e abreviações hexadecimais, por exemplo, #aaa.
+- Use aspas simples ou duplas de forma consistente. Preferência é por aspas duplas,    por exemplo, conteúdo:" ".
+- Citação valores de atributos em seletores, por exemplo, input [type="checkbox"].
+- Onde for permitido, evitar especificar unidades para zero valores, por exemplo, margin: 0.
+- Inclua um espaço após cada vírgula em propriedades separadas por vírgula ou valores de funções.
+- Sempre inclua um ponto-e-vírgula no fim da última declaração em um bloco declarativo.
+- Coloque o fechamento das chaves na mesma coluna que o primeiro caracter do conjunto de regras.
+- Separe cada conjunto de regras por uma linha em branco.
+
+Não recomendado:
+```css
+.selector-1,.selector-2{
+    border:1px solid;
+    color:#333;
+    position:absolute;
+}
+.selector-3{
+    margin:0;
+    background-color:red;
+}
+```
+Recomendado:
+```css
+.selector-1,
+.selector-2 {
+    border: 1px solid;
+    color: #333;
+    position: absolute;
+}
+
+.selector-3 {
+    margin: 0;
+    background-color: red;
+}
+```
+
 ### Desenvolvimento em progresso.
 
-## Referências e Créditos:
+## Créditos e Referências:
 
 - [Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 - [idiomatic.css](https://github.com/necolas/idiomatic-css)
