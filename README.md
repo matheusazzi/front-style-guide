@@ -25,7 +25,7 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
     4. Semântica
     5. Multimídia fallback
     6. Separação de conceitos
-    7. Entity References
+    7. Entity references
     8. Tipo de atributo
     9. Formatação dos elementos
     10. HTML Quotation marks
@@ -33,9 +33,9 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
     1. CSS Validado
     2. Nomeação de ID e Class
     3. Separação de nomeclatura
-    4. Tipo de Seletores
-    5. Propriedades Shorthand
-    6. Zero e Unidades
+    4. Tipo de seletores
+    5. Propriedades shorthand
+    6. Zero e unidades
     7. Zero à esquerda
     8. Hexadecimais
     9. CSS Hacks
@@ -284,7 +284,7 @@ Recomendado:
 </html>
 ```
 
-### Entity References
+### Entity references
 
 Não use entity references.
 
@@ -429,7 +429,7 @@ Recomendado:
 .title-page
 ```
 
-### Tipo de Seletores
+### Tipo de seletores
 
 Evite utilizar tipos de seletores em IDs e Classes.
 
@@ -450,7 +450,7 @@ Recomendado:
 .error {}
 ```
 
-### Propriedades Shorthand
+### Propriedades shorthand
 
 Não recomendado:
 ```css
@@ -470,7 +470,7 @@ font: 16px/1.4 Arial, tahoma, sans-serif;
 padding: 0 1em 2em;
 ```
 
-### Zero e Unidades
+### Zero e unidades
 
 Omita a especificação da unidade quando o valor for "0".
 
