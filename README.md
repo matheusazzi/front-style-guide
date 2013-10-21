@@ -18,6 +18,7 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
     4. Sem whitespace
     5. Codificação
     6. Comentários
+    7. Páginas de erro
 2. HTML Regras
     1. Documento
     2. Elementos nulos
@@ -148,6 +149,12 @@ Comente o código quando achar necessário, seja cauteloso, o excesso também po
 
 Isso dependerá da complexidade do projeto.
 
+### Páginas de erro
+
+Sempre tenha páginas de erro para seu projeto ou forneça algum fallback para o usuário.
+
+É recomendado ao menos fornecer a página de erro 404 (Página não encontrada).
+
 ## HTML Regras
 
 ### Documento
@@ -205,7 +212,12 @@ Recomendado:
 
 Use HMTL de acordo com seu propósito.
 
-Use os elementos ("tags") para o objetivo que eles foram criados. Por exemplo, use `h1`, `h2`, `h3`, `h4`, `h5`, `h6` para cabeçalhos ou itens importantes, `p` para parágrafos, `a` para âncoras, etc.
+- Use os elementos ("tags") para o objetivo que eles foram criados. Por exemplo, use `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>` para cabeçalhos ou itens importantes, `<p>` para parágrafos, `<a>` para âncoras, etc.
+- Cada parágrafo deve estar dentro de uma tag `<p>`. Nunca use `<br/>` para criar multiplos parágrafos.
+- Itens em forma de lista sempre devem estar dentro de `<ul>`, `<ol>`, ou `<dl>`, Nunca use `<div>` ou `<p>`.
+- Cada texto atrelado a um input de formulário deve utilizar a tag `<label>`. Especialmente elementos radio ou checkbox.
+- Mesmo que usar aspas duplas (" ") em atributos seja opcional, <b>sempre</b> as declare para tornar o código mais legível.
+- Sempre declare um `<title></title>` para cada página.
 
 Usar HTML de acordo com seu propósito é importante para semântica, acessibilidade, reúso, e código eficiente.
 
