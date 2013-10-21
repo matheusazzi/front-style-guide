@@ -7,7 +7,39 @@ O objetivo disso é ter documentado todas as boas práticas para um desenvolvime
 
 <b>O conteúdo foi retirado da web e pertence exclusivamente a seus criadores citados nos créditos.</b>
 
-Por favor, Contribua.
+Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
+
+## Tabela de conteúdo
+
+1. Geral
+    1. Protocolo
+    2. Indentação
+    3. Font case
+    4. Sem whitespace
+    5. Codificação
+    6. Comentários
+2. HTML Regras
+    1. Documento
+    2. Elementos nulos
+    3. Validação HTML
+    4. Semântica
+    5. Multimídia fallback
+    6. Separação de conceitos
+    7. Entity References
+    8. Tipo de atributo
+    9. Formatação dos elementos
+    10. HTML Quotation marks
+3. CSS Regras
+    1. CSS Validado
+    2. Nomeação de ID e Class
+    3. Separação de nomeclatura
+    4. Tipo de Seletores
+    5. Propriedades Shorthand
+    6. Zero e Unidades
+    7. Zero à esquerda
+    8. Hexadecimais
+    9. CSS Hacks
+    10. Organização
 
 ## Geral
 
@@ -36,8 +68,6 @@ Recomendado:
 	background: url('//www.google.com/images/example');
 }
 ```
-
-## Formatação Geral
 
 ### Indentação
 
@@ -118,7 +148,7 @@ Comente o código quando achar necessário, seja cauteloso, o excesso também po
 
 Isso dependerá da complexidade do projeto.
 
-## HTML Style Rules
+## HTML Regras
 
 ### Documento
 
@@ -187,7 +217,7 @@ Recomendado:
 ```html
 <a href="contato" title="Contato">Contato</a>
 ```
-### Multimídia Fallback
+### Multimídia fallback
 
 Forneça alternativas para conteúdos multimídia.
 
@@ -290,7 +320,6 @@ Recomendado:
 <link rel="stylesheet" href="//www.google.com/css/maia.css">
 <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 ```
-## HTML Regras de Formatação
 
 ### Formatação dos elementos
 
@@ -328,13 +357,13 @@ Também indente mesmo que sejam filhos de outro elemento block, list ou table.
 </table>
 ```
 
-### HTML Quotation Marks
+### HTML Quotation marks
 
 Sempre use aspas duplas no arquivo html.
 
 Use aspas duplas (" ") ao invés de simples (' ').
 
-Use (' ') para JavaScript.
+Use (' ') para JavaScript e CSS.
 
 Não recomendado:
 ```html
@@ -344,11 +373,11 @@ Recomendado:
 ```html
 <a class="bt bt-primary">Login</a>
 ```
-## CSS Style Rules
+## CSS Regras
 
 ### CSS Validado
 
-Use CSS válidado sempre que possível.
+Use CSS válidado sempre que possível. Pois isso também pode ajudar a garantir a qualidade do seu código.
 
 ### Nomeação de ID e Class
 
@@ -377,6 +406,27 @@ Recomendado:
 #login {} /* Area de login. */
 #sidebar {} /* Barra lateral. */
 .gallery {} /* Pode ser galeria de imagens, videos, audio. */
+```
+
+### Separação de nomeclatura
+
+Separe as palavras em IDs e Classes com um "-".
+
+Não concatene palavras em um seletor.
+
+Ter um padrão definido ajuda para não haver nomes conflitando e em manutenções.
+
+Não recomendado:
+```css
+#videoid
+.bt_big
+.titlePage
+```
+Recomendado:
+```css
+#video-id
+.bt-big
+.title-page
 ```
 
 ### Tipo de Seletores
@@ -459,27 +509,6 @@ Recomendado:
 ```css
 color: #ebc;
 background-color: #666;
-```
-
-### Separação de nomeclatura
-
-Separe as palavras em IDs e Classes com um "-".
-
-Não concatene palavras em um seletor.
-
-Ter um padrão definido ajuda para não haver nomes conflitando e em manutenções.
-
-Não recomendado:
-```css
-#videoid
-.bt_big
-.titlePage
-```
-Recomendado:
-```css
-#video-id
-.bt-big
-.title-page
 ```
 
 ### CSS Hacks
@@ -589,6 +618,24 @@ Recomendado:
     background-color: red;
 }
 ```
+
+#### Exceções e ligeiros desvios
+
+Quando é necessário a declaração de apenas uma propriedade, podemos declarar de forma mais simples.
+```css
+.selector-1 { width: 10%; }
+.selector-2 { width: 20%; }
+.selector-3 { width: 30%; }
+```
+
+### Organização
+
+Organização de código é uma importante parte de qualquer base de código CSS, e crucial para grandes bases de código.
+
+Separe logicamente partes distintas do código.
+
+Use arquivos separados (concatenados por um processo de build) para ajudar a dividir o código para componentes distintos.
+
 
 ### Desenvolvimento em progresso.
 
