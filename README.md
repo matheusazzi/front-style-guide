@@ -3,7 +3,7 @@ Front-end Styleguide
 
 Esse é um styleguide para boas práticas de front-end.
 
-O objetivo disso é ter documentado todas as boas práticas para um desenvolvimento consistente, legível e funcional. Para servir de consulta a desenvolvedores antigos e ajuda aos novos. <b>Aqui não encontra-se a verdade absoluta</b>, apenas um apurado de todo o conteúdo disponível e que foram considerados um bom modelo.
+O objetivo disso é ter documentado algumas práticas para um desenvolvimento consistente, legível e funcional. Para servir de consulta a desenvolvedores antigos e ajuda aos novos. <b>Aqui não encontra-se a verdade absoluta</b>, apenas um apurado de todo o conteúdo disponível e que foram considerados um bom modelo.
 
 <b>O conteúdo foi retirado da web e pertence exclusivamente a seus criadores citados nos créditos.</b>
 
@@ -12,37 +12,45 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
 ## Tabela de conteúdo
 
 1. Geral
-    1. Protocolo
-    2. Indentação
-    3. Font case
-    4. Sem whitespace
-    5. Codificação
-    6. Comentários
-    7. Páginas de erro
-2. HTML Regras
-    1. Documento
-    2. Elementos nulos
-    3. Validação HTML
-    4. Semântica
-    5. Multimídia fallback
-    6. Separação de conceitos
-    7. Entity references
-    8. Tipo de atributo
-    9. Formatação dos elementos
-    10. HTML Quotation marks
-3. CSS Regras
-    1. CSS Validado
-    2. Nomeação de ID e Class
-    3. Separação de nomeclatura
-    4. Tipo de seletores
-    5. Propriedades shorthand
-    6. Zero e unidades
-    7. Zero à esquerda
-    8. Hexadecimais
-    9. CSS Hacks
-    10. Organização
+    1. [Princípio](#princ%C3%ADpio)
+    2. [Protocolo](#protocolo)
+    3. [Indentação](#indenta%C3%A7%C3%A3o)
+    4. [Font case](#font-case)
+    5. [Sem whitespace](#sem-whitespace)
+    6. [Codificação](#codifica%C3%A7%C3%A3o)
+    7. [Comentários](#coment%C3%A1rios)
+    8. [Idioma](#idioma)
+    9. [Páginas de erro](#p%C3%A1ginas-de-erro)
+2. HTML
+    1. [Documento](#documento)
+    2. [Elementos nulos](#elementos-nulos)
+    3. [Validação HTML](#valida%C3%A7%C3%A3o-html)
+    4. [Semântica](#sem%C3%A2ntica)
+    5. [Multimídia fallback](#multim%C3%ADdia-fallback)
+    6. [Separação de conceitos](#separa%C3%A7%C3%A3o-de-conceitos)
+    7. [Entity references](#entity-references)
+    8. [Tipo de atributo](#tipo-de-atributo)
+    9. [Formatação dos elementos](#formata%C3%A7%C3%A3o-dos-elementos)
+    10. [HTML Quotation marks](#html-quotation-marks)
+3. CSS
+    1. [CSS Validado](#css-validado)
+    2. [Nomeação de ID e Class](#nomea%C3%A7%C3%A3o-de-id-e-class)
+    3. [Separação de nomeclatura](#separa%C3%A7%C3%A3o-de-nomeclatura)
+    4. [Tipo de seletores](#tipo-de-seletores)
+    5. [Propriedades shorthand](#propriedades-shorthand)
+    6. [Zero e unidades](#zero-e-unidades)
+    7. [Zero à esquerda](#zero-%C3%A0-esquerda)
+    8. [Hexadecimais](#hexadecimais)
+    9. [CSS Hacks](#css-hacks)
+    10. [Comentários](#coment%C3%A1rios-1)
+    11. [Formatação](#formata%C3%A7%C3%A3o)
+    12. [Organização](#organiza%C3%A7%C3%A3o)
 
 ## Geral
+
+### Princípio
+
+<b>Todo código em qualquer aplicação deve parecer como se tivesse sido escrito por uma única pessoa, independentemente de quantas pessoas tenham contribuído.</b>
 
 ### Protocolo
 
@@ -52,45 +60,56 @@ Omitir o protocolo torna a "URL relativa", evitando problemas de conteúdo misto
 
 Não Recomendado:
 ```html
-<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+<script src="http://www.meusite.com/js/main.js"></script>
 ```
 ```css
 .example {
-	background: url('http://www.google.com/images/example');
+	background: url('http://www.meusite.com/img/bg-body.jpg');
 }
 ```
 
 Recomendado:
 ```html
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+<script src="//www.meusite.com/js/main.js"></script>
 ```
 ```css
 .example {
-	background: url('//www.google.com/images/example');
+	background: url('//www.meusite.com/img/bg-body.jpg');
+}
+```
+
+Ainda melhor se for possível declarar dessa maneira:
+
+```html
+<script src="js/main.js"></script>
+```
+```css
+.example {
+	background: url('../img/bg-body.jpg');
 }
 ```
 
 ### Indentação
 
-Apenas um estilo deve existir em todo o projeto. Seja sempre consistente na utilização de espaços em branco. Use espaços em branco para melhorar a legibilidade.
+Apenas um estilo deve existir em todo o projeto. Seja sempre consistente na utilização da indentação para melhorar a legibilidade.
+
+Escolha entre indentação suave (espaços) ou tabulação. Atenha-se à sua escolha sem falhar. (Recomendado: espaços)
+Se usar espaços, escolha o número de caracteres usados por nível de indentação. (Recomendado: 4 espaços)
 
 Nunca misture espaços e tabs para indentação.
 
-Escolha entre indentação suave (espaços) ou tabulação. Atenha-se à sua escolha sem falhar. (Preferência: espaços)
-Se usar espaços, escolha o número de caracteres usados por nível de indentação. (Preferência: 4 espaços)
+<b>Dica:</b> configure seu editor para mostrar "caractéres invisíveis". Isso irá permitir que você elimine espaços em branco da quebra de linha evitando commits poluídos.
 
-<b>Dica:</b> configure seu editor para "mostrar invisíveis". Isso irá permitir que você elimine espaços em branco da quebra de linha, elimine espaços em branco de linhas vazias sem indentação e evite commits poluídos.
-
-<b>Dica:</b> use um [EditorConfig](http://editorconfig.org/) arquivo (ou equivalente) para ajudar a manter a convenção básica de espaços em branco que você aceitou para sua base de código.
+<b>Dica:</b> use um [EditorConfig](http://editorconfig.org/) arquivo (ou equivalente) para ajudar a manter a convenção básica de indentação que você aceitou para sua base de código.
 
 ```html
 <ul>
-	<li>Fantastic</li>
-	<li>Great</li>
+	<li>Exemplo</li>
+	<li>Indentado</li>
 </ul>
 ```
 ```css
-.example {
+.exemplo {
 	color: blue;
 }
 ```
@@ -107,7 +126,7 @@ Não recomendado:
 ```
 ```css
 .example {
-	color: #E5E5E5;
+	COLOR: #E5E5E5;
 }
 ```
 
@@ -141,13 +160,17 @@ Verifique se o seu editor usa UTF-8 (sem BOM) como codificação de caracteres.
 
 Especifique a codificação em arquivos HTML via `<meta charset="utf-8">`.
 
-Não especifique a codificação de folhas de estilo.
-
 ### Comentários
 
 Comente o código quando achar necessário, seja cauteloso, o excesso também pode prejudicar.
 
 Isso dependerá da complexidade do projeto.
+
+### Idioma
+
+Aplicações devem ser escritas em um único idioma, não importe o idioma que seja.
+
+Se você deseja que sua aplicação tenha apoio de outros desenvolvedores desconhecidos é recomendável que opte pelo idioma Inglês.
 
 ### Páginas de erro
 
@@ -155,7 +178,7 @@ Sempre tenha páginas de erro para seu projeto ou forneça algum fallback para o
 
 É recomendado ao menos fornecer a página de erro 404 (Página não encontrada).
 
-## HTML Regras
+## HTML
 
 ### Documento
 
@@ -178,13 +201,13 @@ Para uma melhor organização e suporte da sua aplicação, utilize a notação 
 
 ### Elementos nulos
 
-Não feche elementos nulos, ou seja, use `<br>`, não `<br />`.
+Não feche elementos nulos, ou seja, use `<img>`, `<link>`, etc.. E não `<img />`, `<link />`.
 
 ### Validação HTML
 
 Use HTML validado sempre que possível.
 
-Use ferramentas como o W3C HTML validator para teste.
+Use ferramentas como o [W3C HTML validator](http://validator.w3.org/) para teste.
 
 Não recomendado:
 ```html
@@ -227,13 +250,13 @@ Não recomendado:
 ```
 Recomendado:
 ```html
-<a href="contato" title="Contato">Contato</a>
+<a href="/contato" title="Contato">Contato</a>
 ```
 ### Multimídia fallback
 
 Forneça alternativas para conteúdos multimídia.
 
-Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza de oferecer alternativas de acesso. Para imagens use `alt=""` e para videos e audios use legendas ou texto, se disponíveis.
+Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza de oferecer alternativas de acesso. Para imagens use `alt=""` e `title=""` e para videos e audios use legendas ou texto, se disponíveis.
 
 Não recomendado:
 ```html
@@ -241,7 +264,7 @@ Não recomendado:
 ```
 Recomendado:
 ```html
-<img src="logotipo.png" alt="Empresa FooBar">
+<img src="logotipo.png" alt="Empresa FooBar" title="Empresa FooBar">
 ```
 ### Separação de conceitos
 
@@ -302,7 +325,7 @@ Não use entity references.
 
 Não é necessário utilizar entity references como `&mdash;`, `&rdquo;`, ou `&#x263a;`, assumindo que você está utilizando codificação UTF-8.
 
-As únicas exceções se aplicam a caracteres com significado especial em HTML (como `<` e `&`), bem como caracteres "invisíveis" (como `&nbsp;`).
+As únicas exceções se aplicam a caracteres com significado especial para o HTML (como `<` e `&`), bem como caracteres "invisíveis" (como `&nbsp;`).
 
 Não recomendado:
 
@@ -385,7 +408,7 @@ Recomendado:
 ```html
 <a class="bt bt-primary">Login</a>
 ```
-## CSS Regras
+## CSS
 
 ### CSS Validado
 
@@ -536,8 +559,6 @@ Utilize uma abordagem diferente com fallbacks, seja utilizando o [Modernizr](htt
 .lt-ie9 seletor { ... }
 ```
 
-## CSS Style Rules
-
 ### Comentários
 
 Código bem comentado é extremamente importante. Tire tempo para descrever componentes, como eles funcionam, suas limitações, e o modo como são construídos. Não deixe outros no time adivinharem o propósito de códigos incomuns ou não óbvios.
@@ -571,7 +592,7 @@ Estilo de comentário deve ser simples e consistente dentro de uma única base d
  * nesta linha por um tempo finalmente concluindo aqui no final deste parágrafo.
  *
  * A descrição longa é ideal para explicações mais detalhadas e documentação.
- * Ele pode incluir HTML exemplo, URLs, ou qualquer outra informação
+ * Ele pode incluir HTML de exemplo, URLs, ou qualquer outra informação
  * que seja considerada necessária ou útil.
  *
  * @tag Esta é uma tag chamada 'tag'
