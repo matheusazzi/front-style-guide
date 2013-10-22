@@ -37,7 +37,7 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
     2. [Nomeação de ID e Class](#nomea%C3%A7%C3%A3o-de-id-e-class)
     3. [Separação de nomeclatura](#separa%C3%A7%C3%A3o-de-nomeclatura)
     4. [Tipo de seletores](#tipo-de-seletores)
-    5. [Propriedades shorthand](#propriedades-shorthand)
+    5. [Abreviação de propriedades](#abrevia%C3%A7%C3%A3o-de-propriedades)
     6. [Zero e unidades](#zero-e-unidades)
     7. [Zero à esquerda](#zero-%C3%A0-esquerda)
     8. [Hexadecimais](#hexadecimais)
@@ -59,9 +59,11 @@ Omitir o protocolo (http:, https:) das URLs das imagens, midias, style sheets, s
 Omitir o protocolo torna a "URL relativa", evitando problemas de conteúdo misto.
 
 Não Recomendado:
+
 ```html
 <script src="http://www.meusite.com/js/main.js"></script>
 ```
+
 ```css
 .example {
 	background: url('http://www.meusite.com/img/bg-body.jpg');
@@ -69,9 +71,11 @@ Não Recomendado:
 ```
 
 Recomendado:
+
 ```html
 <script src="//www.meusite.com/js/main.js"></script>
 ```
+
 ```css
 .example {
 	background: url('//www.meusite.com/img/bg-body.jpg');
@@ -83,6 +87,7 @@ Ainda melhor se for possível declarar dessa maneira:
 ```html
 <script src="js/main.js"></script>
 ```
+
 ```css
 .example {
 	background: url('../img/bg-body.jpg');
@@ -108,6 +113,7 @@ Nunca misture espaços e tabs para indentação.
 	<li>Indentado</li>
 </ul>
 ```
+
 ```css
 .exemplo {
 	color: blue;
@@ -121,9 +127,11 @@ Sempre use minúsculo.
 Todo o código deve estar em letras minúsculas: Isso se aplica a nomes de elementos HTML, atributos, valores de atributos (exceto text/CDATA), seletores CSS, propriedades e valores de propriedade (com exceção de strings).
 
 Não recomendado:
+
 ```html
 <A HREF="/">Home</A>
 ```
+
 ```css
 .example {
 	COLOR: #E5E5E5;
@@ -131,9 +139,11 @@ Não recomendado:
 ```
 
 Recomendado:
+
 ```html
 <img src="google.png" alt="Google">
 ```
+
 ```css
 .example {
 	color: #e5e5e5;
@@ -145,13 +155,17 @@ Recomendado:
 Remova os espaços em branco, eles são desnecessários e podem complicar o uso de ferramentas de diff.
 
 Não recomendado:
+
 ```html
 <p>Lorem ipsum.   </p>
 ```
+
 Recomendado:
+
 ```html
 <p>Lorem ipsum.</p>
 ```
+
 ### Codificação
 
 Use UTF-8 (sem BOM).
@@ -185,6 +199,7 @@ Sempre tenha páginas de erro para seu projeto ou forneça algum fallback para o
 Use HTML5 sempre!
 
 A sintax HTML5 deve ser definida em todos os documentos HTML usando:
+
 ```html
 <!DOCTYPE html>
 ```
@@ -210,6 +225,7 @@ Use HTML validado sempre que possível.
 Use ferramentas como o [W3C HTML validator](http://validator.w3.org/) para teste.
 
 Não recomendado:
+
 ```html
 <span>
 	<ul>
@@ -219,7 +235,9 @@ Não recomendado:
 	</ul>
 </span>
 ```
+
 Recomendado:
+
 ```html
 <div>
 	<ul>
@@ -231,6 +249,7 @@ Recomendado:
 	<p>Lorem ipsum sit amet</p>
 </div>
 ```
+
 ### Semântica
 
 Use HMTL de acordo com seu propósito.
@@ -245,13 +264,17 @@ Use HMTL de acordo com seu propósito.
 Usar HTML de acordo com seu propósito é importante para semântica, acessibilidade, reúso, e código eficiente.
 
 Não recomendado:
+
 ```html
 <div onclick="goToContact();">Contato</div>
 ```
+
 Recomendado:
+
 ```html
 <a href="/contato" title="Contato">Contato</a>
 ```
+
 ### Multimídia fallback
 
 Forneça alternativas para conteúdos multimídia.
@@ -259,13 +282,17 @@ Forneça alternativas para conteúdos multimídia.
 Para mídias, como imagens, videos, objetos animados via canvas, tenha certeza de oferecer alternativas de acesso. Para imagens use `alt=""` e `title=""` e para videos e audios use legendas ou texto, se disponíveis.
 
 Não recomendado:
+
 ```html
 <img src="logotipo.png">
 ```
+
 Recomendado:
+
 ```html
 <img src="logotipo.png" alt="Empresa FooBar" title="Empresa FooBar">
 ```
+
 ### Separação de conceitos
 
 Separe a estrutura da apresentação e do comportamento.
@@ -277,6 +304,7 @@ Separar a estrutura da apresentação e comportamento é muito importante por mo
 É sempre mais custoso para alterar documentos que não estão bem estruturados.
 
 Não recomendado:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -301,7 +329,9 @@ Não recomendado:
 	</body>
 </html>
 ```
+
 Recomendado:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -346,11 +376,14 @@ Não é necessário especificá-los, o HTML5 tem como padrão `text/css` para fo
 Isso pode ser feito com segurança, mesmo para navegadores mais antigos.
 
 Não recomendado:
+
 ```html
 <link type="text/css" rel="stylesheet" href="//www.google.com/css/maia.css">
 <script type="text/javascript" src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 ```
+
 Recomendado:
+
 ```html
 <link rel="stylesheet" href="//www.google.com/css/maia.css">
 <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
@@ -363,6 +396,7 @@ Use uma nova linha para cada elemento block, list ou table, e indente todos seus
 Independente do estilo de um elemento (o CSS permite que aos elementos assumir um papel diferente através da propriedade display), coloque cada elemento block, list ou table em uma nova linha.
 
 Também indente mesmo que sejam filhos de outro elemento block, list ou table.
+
 ```html
 <blockquote>
   	<p><em>Space</em>, the final frontier.</p>
@@ -401,13 +435,17 @@ Use aspas duplas (" ") ao invés de simples (' ').
 Use (' ') para JavaScript e CSS.
 
 Não recomendado:
+
 ```html
 <a class='bt bt-primary'>Login</a>
 ```
+
 Recomendado:
+
 ```html
 <a class="bt bt-primary">Login</a>
 ```
+
 ## CSS
 
 ### CSS Validado
@@ -425,6 +463,7 @@ O uso de nomes funcionais e genéricos reduz a probabilidade de documentação d
 Além disso, a prática de nomes genéricos é melhor, pois sendo muito específico toda vez que o layout precisar ser alterado você precisará mudar o nome do(a) ID/classe se for muito específico e não condizer com o novo layout.
 
 Não recomendado:
+
 ```css
 #navigation {} /* Nomeclatura extensa desnecessária. */
 .bt-verde-maior {} /* Classe usada somente para um botão verde grande. */
@@ -433,7 +472,9 @@ Não recomendado:
 #left-bar {} /* Fixado que é uma barra no lado esquerdo, se for preciso mudar para o lado direito precisará alterar o html. */
 .images-lists {} /* Somente imagens. */
 ```
+
 Recomendado:
+
 ```css
 #nav {} /* Nomeclatura simples, sem perder o sentido. */
 .bt-secondary {} /* Um botão diferente do botão padrão. */
@@ -452,12 +493,15 @@ Não concatene palavras em um seletor.
 Ter um padrão definido ajuda para não haver nomes conflitando e em manutenções.
 
 Não recomendado:
+
 ```css
 #videoid
 .bt_big
 .titlePage
 ```
+
 Recomendado:
+
 ```css
 #video-id
 .bt-big
@@ -473,36 +517,49 @@ A menos que seja necessário, sempre deve evitar essa prática.
 Evitando seletores ancestrais desnecessários também ajudará na performance do seu site.
 
 Não recomendado:
+
 ```css
 ul#products {}
 h2.title-page {}
 div.error {}
 ```
+
 Recomendado:
+
 ```css
 #products {}
 .title-page {}
 .error {}
 ```
 
-### Propriedades shorthand
+### Abreviação de propriedades
+
+Algumas propriedades do CSS podem ser combinadas em formas abreviadas.
 
 Não recomendado:
+
 ```css
-border-top-style: none;
-font-family: Arial, tahoma, sans-serif;
-font-size: 16px;
-line-height: 1.4;
-padding-bottom: 2em;
-padding-left: 1em;
-padding-right: 1em;
-padding-top: 0;
+selector {
+    border-top-style: none;
+    font-family: Arial, tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    padding-top: 0;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 ```
+
 Recomendado:
+
 ```css
-border-top: 0;
-font: 16px/1.4 Arial, tahoma, sans-serif;
-padding: 0 1em 2em;
+selector {
+    border-top: 0;
+    font: 16px/1.4 Arial, tahoma, sans-serif;
+    padding: 0 5px 10px;
+}
 ```
 
 ### Zero e unidades
@@ -512,10 +569,13 @@ Omita a especificação da unidade quando o valor for "0".
 Pois zero é zero em qualquer unidade, então é desnecessária essa informação.
 
 Não recomendado:
+
 ```css
 margin: 0px;
 ```
+
 Recomendado:
+
 ```css
 padding: 0;
 border: 0;
@@ -524,6 +584,7 @@ border: 0;
 ### Zero à esquerda
 
 Omita o "0" na frente de valores entre -1 e 1, não é necessário.
+
 ```css
 font-size: .8em;
 opacity: .5;
@@ -536,11 +597,14 @@ se 3 characteres hexadecimais quando possível.
 Para cores isso é permitido, 3 characteres hexadecimais é melhor para digitar e mais sucinto.
 
 Não recomendado:
+
 ```css
 color: #eebbcc;
 background-color: #666666;
 ```
+
 Recomendado:
+
 ```css
 color: #ebc;
 background-color: #666;
@@ -626,6 +690,7 @@ O formato de código escolhido deve garantir que o código seja: fácil de ler; 
 - Separe cada conjunto de regras por uma linha em branco.
 
 Não recomendado:
+
 ```css
 .selector-1,.selector-2{
     border:1px solid;
@@ -637,7 +702,9 @@ Não recomendado:
     background-color:red;
 }
 ```
+
 Recomendado:
+
 ```css
 .selector-1,
 .selector-2 {
@@ -655,6 +722,7 @@ Recomendado:
 #### Exceções e ligeiros desvios
 
 Quando é necessário a declaração de apenas uma propriedade, podemos declarar de forma mais simples.
+
 ```css
 .selector-1 { width: 10%; }
 .selector-2 { width: 20%; }
