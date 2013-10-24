@@ -9,6 +9,8 @@ O objetivo disso é ter documentado algumas práticas para um desenvolvimento co
 
 Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
 
+### Todo código em qualquer aplicação deve parecer como se tivesse sido escrito por uma única pessoa, independentemente de quantas pessoas tenham contribuído.
+
 ## Tabela de conteúdo
 
 1. Geral
@@ -21,6 +23,7 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
     7. [Comentários](#coment%C3%A1rios)
     8. [Idioma](#idioma)
     9. [Páginas de erro](#p%C3%A1ginas-de-erro)
+    10. [Build](#build)
 2. HTML
     1. [Documento](#documento)
     2. [Elementos nulos](#elementos-nulos)
@@ -58,7 +61,7 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
 
 ### Princípio
 
-<b>Todo código em qualquer aplicação deve parecer como se tivesse sido escrito por uma única pessoa, independentemente de quantas pessoas tenham contribuído.</b>
+### Todo código em qualquer aplicação deve parecer como se tivesse sido escrito por uma única pessoa, independentemente de quantas pessoas tenham contribuído.
 
 ### Protocolo
 
@@ -625,6 +628,17 @@ Não utilize CSS Hacks!
 Essa é uma prática muito ruim e pode gerar algumas complicações.
 
 Utilize uma abordagem diferente com fallbacks, seja utilizando o [Modernizr](http://modernizr.com/) ou com a declaração de navegadores antigos no comentário do início da página.
+
+Não recomendado
+
+```css
+selectior {
+    margin: 50px; 
+    _margin: 25px;
+}
+```
+
+Recomendado:
 
 ```css
 .no-csstransitions seletor { ... }
