@@ -922,6 +922,17 @@ if ( 'prop' in object ) {
 }
 ```
 
+### Nomeclaturas
+
+```javascript
+functionNamesLikeThis;
+variableNamesLikeThis;
+ConstructorNamesLikeThis;
+EnumNamesLikeThis;
+methodNamesLikeThis;
+SYMBOLIC_CONSTANTS_LIKE_THIS;
+```
+
 ### Use strict
 
 ```javascript
