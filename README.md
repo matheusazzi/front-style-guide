@@ -45,6 +45,14 @@ Por favor, [Contribua](https://github.com/matheusazzi/front-style-guide/).
     10. [Comentários](#coment%C3%A1rios-1)
     11. [Formatação](#formata%C3%A7%C3%A3o)
     12. [Organização](#organiza%C3%A7%C3%A3o)
+4. JS
+    1. [Sintaxe]()
+    2. [Declaração]()
+    3. [Comparações]()
+    4. [Nomeclaturas]()
+    5. [Use strict]()
+    6. [JSHint]()
+    7. [JSHint]()
 
 ## Geral
 
@@ -736,6 +744,189 @@ Organização de código é uma importante parte de qualquer base de código CSS
 Separe logicamente partes distintas do código.
 
 Use arquivos separados (concatenados por um processo de build) para ajudar a dividir o código para componentes distintos.
+
+## JS
+
+### Sintaxe
+
+Para facilitar a legibilidade `if`, `else`, `for`, `while`, `try` sempre tem espaços, chaves e ocorrem em múltiplas linhas. Também é importante cuidas os espaçamentos, fique atento a parênteses, chaves e quebras de linhas.
+
+```javascript
+if ( condicao ) {
+	...
+}
+
+while ( condicao ) {
+	...
+}
+
+var i,
+length = 100;
+
+for ( i = 0; i < length; i++ ) {
+	...
+}
+
+var prop;
+
+for ( prop in object ) {
+  	...
+}
+
+if ( true ) {
+	...
+} else {
+	...
+}
+```
+
+### Declaração
+
+Sempre declare as variáveis, declare variáveis globais utilizando `window.` e variáveis locais com `var`.
+
+```javascript
+window.minhaVariavelGlobal = '';
+var minhaVariavelLocal = '';
+```
+
+É uma boa prática quando necessário declarar mais de uma varivável aninhálas em uma única var. (quando possível)
+
+```javascript
+var primeira,
+	segunda,
+	terceira;
+```
+Exemplo prático
+
+```javascript
+window.foo = 'bar';
+
+function strReplace() {
+	var name = 'José is',
+		prop = foo.replace('r', 'dass!');
+
+	return name + prop;
+}
+
+```
+
+### Comparações
+
+É recomendado para maior consistência na comparação utilizar `===` ou `!==`.
+
+```javascript
+if ( variavel === 1 ) {
+	...
+}
+
+if ( variavel !== '1' ) {
+	...
+}
+
+if ( variavel === 'Minha string' ) {
+	...
+} else {
+	...
+}
+
+...
+```
+
+#### Comparando tipos
+
+String:
+
+```javascript
+if ( typeof variavel === 'string' ) {
+
+}
+```
+
+Number:
+
+```javascript
+if ( typeof variavel === 'number' ) {
+
+}
+```
+
+Boolean:
+
+```javascript
+if ( typeof variavel === 'boolean' ) {
+
+}
+```
+
+Object:
+
+```javascript
+if ( typeof variavel === 'object' ) {
+
+}
+```
+
+Array:
+
+```javascript
+if ( Array.isArray( variavel ) ) {
+
+}
+```
+
+Null:
+
+```javascript
+if ( variavel === null ) {
+
+}
+```
+
+Null ou undefined:
+
+```javascript
+if ( variavel == null ) {
+
+}
+```
+
+Undefined variáveis Globais:
+
+```javascript
+if ( typeof variavel === 'undefined' ) {
+
+}
+```
+
+Undefined variáveis Locais:
+
+```javascript
+if ( variavel === undefined ) {
+
+}
+```
+
+Propriedades:
+
+```javascript
+if ( object.prop === undefined ) {
+
+}
+
+if ( object.hasOwnProperty( prop ) ) {
+
+}
+
+if ( 'prop' in object ) {
+
+}
+```
+
+### Use strict
+
+```javascript
+'use strict';
+```
 
 
 ### Desenvolvimento em progresso.
