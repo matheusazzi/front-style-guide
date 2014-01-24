@@ -374,7 +374,7 @@ O simbolo atual para o Euro é `&ldquo;&eur;&rdquo;`.
 
 Recomendado:
 
-O simbolo atual para o Euro é `£`.
+O simbolo atual para o Euro é `€`.
 
 ### Tipo de atributo
 
