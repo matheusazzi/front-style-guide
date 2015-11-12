@@ -530,6 +530,22 @@ Evitando seletores ancestrais desnecessários também ajudará na performance do
 Não recomendado:
 
 ```css
+header .logo {}
+.page .breadcrumb {}
+```
+
+Recomendado:
+
+```css
+.logo {}
+.breadcrumb {}
+```
+
+Evite o uso de seletores qualificados (seletores que são precedidos por um elemento html). Eles inibem a utilização da mesma classe em outro elemento, aumentando assim a especificidade e afetando negativamente o desempenho.
+
+Não recomendado:
+
+```css
 ul#products {}
 h2.title-page {}
 div.error {}
